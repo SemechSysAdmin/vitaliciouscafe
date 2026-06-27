@@ -49,13 +49,13 @@ jobs:
       - name: Build
         run: bun run build
 
-      - name: Deploy via FTPS
+      - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          protocol: ftps
+          protocol: ftp
           port: 21
           local-dir: ./dist/
           server-dir: ./
